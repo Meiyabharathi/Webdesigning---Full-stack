@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: flex-start;
+            /* flex-direction: column; */
+            padding: 20px;
+
+        }
+        #inp{
+            width: 260px;
+            height: 50px;
+            font-size: 25px;
+            text-align: right;
+            margin-bottom: 10px;
+            /* border: none; */
+            border-radius: 10px;
+            padding-right: 10px;
+            box-sizing: border-box;
+
+
+        }
+        button{
+            width: 60px;
+            height: 60px;
+            margin: 3px;
+            border: none;
+            border-radius: 10px;
+            font-size: 22px;
+            background-color: #333;
+            color: white;
+        }
+        .row{
+            border-radius: 10px;
+            background-color: #ed7866;
+            border: 2px solid red;
+            
+               }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="row">
+    <input type="text" id="inp" readonly>
+     <br>
+    <button onclick="disp('1')">1</button>
+    <button onclick="disp('2')">2</button>
+    <button onclick="disp('3')">3</button>
+    <button onclick="disp('4')">4</button>
+    <br>
+    <button onclick="disp('5')">5</button>
+    <button onclick="disp('6')">6</button>
+    <button onclick="disp('7')">7</button>
+    <button onclick="disp('8')">8</button>
+    <br>
+    <button onclick="disp('9')">9</button>
+    <button onclick="disp('0')">0</button>
+    <button onclick="disp('+')">+</button>
+    <button onclick="disp('-')">-</button>
+    <br>
+    <button onclick="disp('*')">*</button>
+    <button onclick="disp('/')">/</button>
+    <button onclick="calc()">=</button>
+    <button onclick="disp('.')">.</button>
+    <br>
+    <button onclick="disp('%')">%</button>
+    <button onclick="clearDisplay('CE')">CE</button>
+    <button onclick="disp('c')">c</button>
+    <button onclick="disp('+/-')">+/-</button>
+    <br>
+    </div>
+
+    <script>
+        function disp(value){
+            document.getElementById("inp").value += value;
+        }
+
+        function clearDisplay(){
+            document.getElementById("inp").value = "";
+        }
+
+        function calc(){
+
+          let exp =document.getElementById("inp").value
+
+          let result=eval(exp)
+          document.getElementById("inp").value=result
+
+        }
+        
+
+
+        
+
+    </script>
+
+
+
+
+</body>
+</html>
